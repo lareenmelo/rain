@@ -1,6 +1,10 @@
 .DS_Store
 **/.DS_Store
 *.xcuserstate
+<<<<<<< Updated upstream
 *.xcbkptlist
 .build/
 xcuserdata/
+=======
+*.xcbkptlist
+>>>>>>> Stashed changes
