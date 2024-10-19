@@ -26,9 +26,9 @@ struct DataLoadingTests {
 
 
 	private class MockAPIDataLoader: DataLoader {
-		var calls = [(Result<Data, Error>) -> Void]()
+		var calls = [(Result<Weather, Error>) -> Void]()
 
-		func get(completion: @escaping (Result<Data, Error>) -> Void) {
+		func get(completion: @escaping (Result<Weather, Error>) -> Void) {
 			calls.append(completion)
 		}
 	}

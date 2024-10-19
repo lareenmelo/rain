@@ -8,23 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State var isConnected: Bool = false
+	@State var temperature: Double = 0.0
 
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-				.tint(isConnected ? .green : .red)
-            Text("Hello, world!")
+			Text("\(temperature)°K")
         }
 		.onAppear {
 			APIDataLoader().get { result in
 				switch result {
-				case .success:
-					isConnected = true
+					case .success(let weatherData):
+					temperature = weatherData.temperature
 				case .failure:
-					isConnected = false
+					temperature = 0.0
 				}
 			}
 		}
