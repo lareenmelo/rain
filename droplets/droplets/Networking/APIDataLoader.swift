@@ -8,20 +8,23 @@
 import Foundation
 
 public protocol DataLoader {
-	func get(completion: @escaping (Result<Data, Error>) -> Void)
+	func get(completion: @escaping (Result<Weather, Error>) -> Void)
 }
 
 class APIDataLoader: DataLoader {
-	func get(completion: @escaping (Result<Data, Error>) -> Void) {
+	func get(completion: @escaping (Result<Weather, Error>) -> Void) {
 		guard let url = URL(string: "https://www.example.com") else { return }
 		let request = URLRequest(url: url)
 
 		URLSession.shared.dataTask(with: request) { data, response, error in
-			if let error {
-				completion(.failure(error))
-			} else {
+			do {
 				guard let data = data else { return }
-				completion(.success(data))
+				let weatherResponse = try JSONDecoder().decode(WeatherMapper.WeatherResponse.self, from: data)
+				let weatherData = WeatherMapper.decode(response: weatherResponse)
+				completion(.success(weatherData))
+
+			} catch {
+				completion(.failure(error))
 			}
 		}.resume()
 	}

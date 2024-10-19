@@ -29,32 +29,9 @@
 		FEDBB7F22C9F4D3400283897 /* dropletsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dropletsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		FE66696B2CC43FE900DEC057 /* Exceptions for "droplets" folder in "droplets" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Model/Weather.swift,
-				Model/WeatherMapper.swift,
-			);
-			target = FEDBB7D72C9F4D3200283897 /* droplets */;
-		};
-		FE66696C2CC43FE900DEC057 /* Exceptions for "droplets" folder in "dropletsTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Model/Weather.swift,
-				Model/WeatherMapper.swift,
-			);
-			target = FEDBB7E72C9F4D3400283897 /* dropletsTests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FEDBB7DA2C9F4D3200283897 /* droplets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				FE66696B2CC43FE900DEC057 /* Exceptions for "droplets" folder in "droplets" target */,
-				FE66696C2CC43FE900DEC057 /* Exceptions for "droplets" folder in "dropletsTests" target */,
-			);
 			path = droplets;
 			sourceTree = "<group>";
 		};
